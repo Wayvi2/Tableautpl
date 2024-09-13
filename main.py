@@ -7,7 +7,6 @@ def tableaucree():
         a = random.randint(0,10)
         tableau.append(a)
     return tableau
-print(tableaucree())
 
 #Ex 2
 
@@ -17,7 +16,6 @@ def occurence(x, tableau):
         if x == element:
             count_tableau += 1
     return count_tableau
-print(occurence(6,tableaucree()))
 
 #Ex 3
 
@@ -30,15 +28,14 @@ for i in range(0,1000):
     chiffre_hasard = random.randint(0, 10)
     tabCompteur[chiffre_hasard - 1] += 1
 
-for i in range(10):
-    print(f"Nombre {i+1} a été tiré {tabCompteur[i]} fois.")
+#for i in range(10):
+    #print(f"Nombre {i+1} a été tiré {tabCompteur[i]} fois.")
 
 #Ex 4
 
 fib = [0,1]
 for i in range (2,30):
     fib.append(fib[i-1] + fib[i-2])
-print(fib[29])
 
 
 #Ex 5
@@ -70,7 +67,6 @@ def miroir_correction(tab):
     return
 
 tab = [0,1,2,3]
-print(miroir(tab))
 
 #Ex 8
 def melange(tab):
@@ -87,6 +83,47 @@ def hamming(tab1,tab2):
         if tab1[i] != tab2[i]:
             count += 1
     return f"Il y a {count} index différent"
+
+
+
+
+
+##############
+# Les tuples #
+##############
+
+#Ex 1
+tup = ('b', 'o', 'n', 'j', 'o', 'u', 'r', ',', ' ', 'j', 'e', ' ', 'v', 'a', 'i', 's', ' ', 'b', 'i', 'e', 'n', ' ', 'e', 't', ' ', 'v', 'o', 'u', 's', '?')
+
+def indice(car, tup):
+    try:
+        index = tup.index(car)
+        return index
+    except ValueError:
+        return -1
+
+
+#Ex 2
+
+def nbre_occurrences(car,tup):
+    count = 0
+    for i in tup:
+        if i == car:
+            count += 1
+    return count
+
+#Ex 3
+
+#def insere(car, indice, tup): ????
+
+#Ex 4
+
+#supprime(indice,tup): ????
+
+#Ex 5
+
+#def renverse(tup): ????
+
 
 
 
