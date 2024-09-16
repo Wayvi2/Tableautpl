@@ -1,4 +1,6 @@
 import random
+from operator import index
+
 
 #Ex 1
 def tableaucree():
@@ -96,11 +98,16 @@ def hamming(tab1,tab2):
 tup = ('b', 'o', 'n', 'j', 'o', 'u', 'r', ',', ' ', 'j', 'e', ' ', 'v', 'a', 'i', 's', ' ', 'b', 'i', 'e', 'n', ' ', 'e', 't', ' ', 'v', 'o', 'u', 's', '?')
 
 def indice(car, tup):
-    try:
-        index = tup.index(car)
-        return index
-    except ValueError:
+    ind = 0
+    while ind < len(tup) and tup[ind] != car:
+        ind += 1
+    if ind < len(tup):
+        return ind
+    else:
         return -1
+
+print(indice('z',tup))
+
 
 
 #Ex 2
@@ -114,15 +121,43 @@ def nbre_occurrences(car,tup):
 
 #Ex 3
 
-#def insere(car, indice, tup): ????
+def insere(car, indice, tup):
+    lst = list(tup)
+    lst.insert(indice, car)
+    return tuple(lst)
+
+def insere_correction(car, indice, tup):
+    index = 0
+    new_tup = ()
+    if indice <= 0 or indice >= len(tup):
+        return False
+    else:
+        for element in tup:
+            if index == indice:
+                new_tup += (car,)
+            new_tup += (element,)
+            index += 1
+    return new_tup
+
+
+print(insere_correction('a', 2, tup))
+
 
 #Ex 4
 
-#supprime(indice,tup): ????
+def supprime(indice, tup):
+    lst = list(tup)
+
+    if 0 <= indice < len(lst):
+        del lst[indice]
+    return tuple(lst)
+
 
 #Ex 5
 
-#def renverse(tup): ????
+def renverse(tup):
+    return tup[::-1]
+
 
 
 
