@@ -140,23 +140,35 @@ def insere_correction(car, indice, tup):
     return new_tup
 
 
-print(insere_correction('a', 2, tup))
-
 
 #Ex 4
 
 def supprime(indice, tup):
-    lst = list(tup)
+    new_tup = ()
+    index = 0
 
-    if 0 <= indice < len(lst):
-        del lst[indice]
-    return tuple(lst)
+    if 0 <= indice < len(tup):
+        for element in tup:
+            if index != indice:
+                new_tup += (element,)
+            index += 1
+    return new_tup
+
+
 
 
 #Ex 5
 
 def renverse(tup):
-    return tup[::-1]
+    new_tup = ()
+    index = len(tup) - 1
+
+    while index >= 0:
+        new_tup += (tup[index],)
+        index -= 1
+    return new_tup
+
+print(renverse(tup))
 
 
 
