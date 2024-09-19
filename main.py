@@ -1,5 +1,4 @@
 import random
-from operator import index
 
 
 #Ex 1
