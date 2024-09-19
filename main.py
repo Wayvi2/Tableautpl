@@ -121,11 +121,6 @@ def nbre_occurrences(car,tup):
 #Ex 3
 
 def insere(car, indice, tup):
-    lst = list(tup)
-    lst.insert(indice, car)
-    return tuple(lst)
-
-def insere_correction(car, indice, tup):
     index = 0
     new_tup = ()
     if indice <= 0 or indice >= len(tup):
